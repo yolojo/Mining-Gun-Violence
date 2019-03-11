@@ -1,0 +1,91 @@
+Occam (Portland State University)
+Version 3.4.0
+Thu Feb 28 14:50:25 2019
+
+Option settings:
+action,search
+nominal,incident_id	,4,1,A
+nominal,date	,4,1,B
+nominal,state	,3,1,C
+nominal,n_males	,3,1,D
+nominal,n_females	,2,1,E
+nominal,n_guns_involved	,2,1,F
+nominal,Guns_Unknown	,2,1,G
+nominal,Guns_Stolen	,2,1,H
+nominal,Guns_Not-Stolen	,2,1,I
+nominal,Adults 	,4,1,J
+nominal,Teens 	,2,1,K
+nominal,Children	,2,1,L
+nominal,n_injured	,2,1,M
+nominal,n_killed	,2,2,Z
+no-frequency,Y
+ipf-maxdev,           0.2
+ipf-maxit,           266
+Data Lines Read	10000
+Alpha threshold	0.05
+Input data file,BinnedOccamOutput_RA_bin_Olson v2.9.xlsm.txt
+Starting model,bottom
+Search direction,up
+Ref model,bottom
+Models to consider,loopless
+Search width,3
+Search levels,7
+Search sort by,bic
+Search preference,descending
+Report sort by,information
+Report preference,descending
+
+    State Space Size,  294912
+    Sample Size,   10000
+    H(data), 9.78051
+    H(IV), 9.27748
+    H(DV),0.794541
+    T(IV:DV),0.291503
+    IVs in use (13), A B C D E F G H I J K L M
+    DV,Z
+
+Searching levels:
+1 : 13 new models, 3 kept; 14 total models, 4 total kept; 0 kb memory used;  0.0 seconds, 0.0 total
+2 : 33 new models, 3 kept; 47 total models, 7 total kept; 172 kb memory used;  0.0 seconds, 0.0 total
+3 : 30 new models, 3 kept; 77 total models, 10 total kept; 348 kb memory used;  0.0 seconds, 0.0 total
+4 : 27 new models, 3 kept; 104 total models, 13 total kept; 692 kb memory used;  0.0 seconds, 0.1 total
+5 : 25 new models, 3 kept; 129 total models, 16 total kept; 864 kb memory used;  0.0 seconds, 0.1 total
+6 : 22 new models, 3 kept; 151 total models, 19 total kept; 1204 kb memory used;  0.0 seconds, 0.1 total
+7 : 19 new models, 3 kept; 170 total models, 22 total kept; 1816 kb memory used;  0.0 seconds, 0.2 total
+
+ID,MODEL,Level,H,dDF,dLR,Alpha,Inf,%dH(DV),dAIC,dBIC,Inc.Alpha,Prog.,%C(Data),%cover
+22 ,IV:EGHJKLMZ,       7,      9.9307,           255,   1959.0539,      0.0000,0.48478338,     17.7858,   1449.0539,   -389.5829,      0.9997,            16,     76.9900,     44.5312
+21 ,IV:EFHJKLMZ,       7,      9.9307,           255,   1958.5614,      0.0000,0.48466150,     17.7814,   1448.5614,   -390.0754,      1.0000,            18,     76.9900,     44.1406
+20 ,IV:EFGJKLMZ,       7,      9.9308,           255,   1957.7991,      0.0000,0.48447288,     17.7745,   1447.7991,   -390.8377,      1.0000,            18,     76.9900,     44.5312
+19*,IV:EGJKLMZ,       6,      9.9318,           127,   1943.2798,      0.0000,0.48087997,     17.6426,   1689.2798,    773.5666,      0.0000,            13,     76.9900,     83.5938
+18 ,IV:EFJKLMZ,       6,      9.9320,           127,   1940.6884,      0.0000,0.48023870,     17.6191,   1686.6884,    770.9752,      0.0608,            14,     76.9500,     83.5938
+17*,IV:DGJMZ,       4,      9.9340,            47,   1913.9589,      0.0000,0.47362426,     17.3764,   1819.9589,   1481.0729,      0.0000,             8,     76.7500,     97.9167
+16 ,IV:GHJKLMZ,       6,      9.9365,           127,   1878.4615,      0.0000,0.46484015,     17.0542,   1624.4615,    708.7482,      1.0000,            15,     76.8200,     50.7812
+15*,IV:GJKLMZ,       5,      9.9377,            63,   1862.0547,      0.0000,0.46078017,     16.9052,   1736.0547,   1281.8033,      0.0000,            12,     76.8100,     92.1875
+14*,IV:FJKLMZ,       5,      9.9380,            63,   1858.3070,      0.0000,0.45985275,     16.8712,   1732.3070,   1278.0555,      0.0000,            11,     76.7700,     92.1875
+13*,IV:EGJKMZ,       5,      9.9400,            63,   1829.6109,      0.0000,0.45275169,     16.6107,   1703.6109,   1249.3595,      0.0021,            12,     76.8600,    100.0000
+12*,IV:GJKMZ,       4,      9.9443,            31,   1769.9834,      0.0000,0.43799640,     16.0693,   1707.9834,   1484.4629,      0.0000,             8,     76.7000,    100.0000
+11*,IV:FJKMZ,       4,      9.9446,            31,   1765.7487,      0.0000,0.43694848,     16.0309,   1703.7487,   1480.2282,      0.0000,             9,     76.6600,    100.0000
+10*,IV:DJMZ,       3,      9.9454,            23,   1755.6038,      0.0000,0.43443805,     15.9388,   1709.6038,   1543.7660,      0.0000,             6,     76.0300,    100.0000
+9*,IV:JKMZ,       3,      9.9540,            15,   1636.6250,      0.0000,0.40499580,     14.8586,   1606.6250,   1498.4699,      0.0000,             7,     76.0300,    100.0000
+8*,IV:GJMZ,       3,      9.9560,            15,   1608.6746,      0.0000,0.39807925,     14.6048,   1578.6746,   1470.5195,      0.0000,             7,     76.5600,    100.0000
+7*,IV:JMZ,       2,      9.9667,             7,   1459.4327,      0.0000,0.36114817,     13.2499,   1445.4327,   1394.9603,      0.0000,             2,     76.0300,    100.0000
+6*,IV:DMZ,       2,      9.9841,             5,   1219.2339,      0.0000,0.30170907,     11.0692,   1209.2339,   1173.1822,      0.0000,             4,     76.0300,    100.0000
+5*,IV:EMZ,       2,     10.0299,             3,    583.1984,      0.0000,0.14431706,      5.2947,    577.1984,    555.5674,      0.0000,             3,     76.0300,    100.0000
+4*,IV:DZ,       1,     10.0389,             2,    459.1372,      0.0000,0.11361714,      4.1684,    455.1372,    440.7165,      0.0000,             1,     76.0300,    100.0000
+3*,IV:MZ,       1,     10.0392,             1,    454.5808,      0.0000,0.11248962,      4.1270,    452.5808,    445.3705,      0.0000,             1,     76.0300,    100.0000
+2*,IV:JZ,       1,     10.0400,             3,    443.8562,      0.0000,0.10983572,      4.0297,    437.8562,    416.2252,      0.0000,             1,     76.0300,    100.0000
+1*,IV:Z,       0,     10.0720,             0,      0.0000,      1.0000,0.00000000,      0.0000,      0.0000,      0.0000,      0.0000,             0,     76.0300,    100.0000
+ID,MODEL,Level,H,dDF,dLR,Alpha,Inf,%dH(DV),dAIC,dBIC,Inc.Alpha,Prog.,%C(Data),%cover
+
+
+Best Model(s) by dBIC:
+10*,IV:DJMZ,       3,      9.9454,            23,   1755.6038,      0.0000,0.43443805,     15.9388,   1709.6038,   1543.7660,      0.0000,             6,     76.0300,    100.0000
+Best Model(s) by dAIC:
+17*,IV:DGJMZ,       4,      9.9340,            47,   1913.9589,      0.0000,0.47362426,     17.3764,   1819.9589,   1481.0729,      0.0000,             8,     76.7500,     97.9167
+Best Model(s) by Information, with all Inc. Alpha < 0.05:
+19*,IV:EGJKLMZ,       6,      9.9318,           127,   1943.2798,      0.0000,0.48087997,     17.6426,   1689.2798,    773.5666,      0.0000,            13,     76.9900,     83.5938
+
+
+Run time: 0.275281 seconds
+

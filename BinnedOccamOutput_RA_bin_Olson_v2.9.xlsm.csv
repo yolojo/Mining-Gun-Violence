@@ -1,0 +1,112 @@
+
+Occam (Portland State University)
+Version 3.4.0
+Mon Mar  4 20:53:03 2019
+
+Option settings:
+action,search
+nominal,incident_id	,4,1,A
+nominal,date	,4,1,B
+nominal,state	,3,1,C
+nominal,n_males	,3,1,D
+nominal,n_females	,2,1,E
+nominal,n_guns_involved	,2,1,F
+nominal,Guns_Unknown	,2,1,G
+nominal,Guns_Stolen	,2,1,H
+nominal,Guns_Not-Stolen	,2,1,I
+nominal,Adults 	,4,1,J
+nominal,Teens 	,2,1,K
+nominal,Children	,2,1,L
+nominal,n_injured	,2,1,M
+nominal,n_killed	,2,2,Z
+no-frequency,Y
+ipf-maxdev,           0.2
+ipf-maxit,           266
+Data Lines Read	10000
+Alpha threshold	0.05
+Input data file,BinnedOccamOutput_RA_bin_Olson v2.9.xlsm.txt
+Generate hypergraph images,Y
+Generate Gephi files,N
+Hypergraph layout style,Fruchterman-Reingold
+Hypergraph image width,640
+Hypergraph image height,480
+Hypergraph font size,12
+Hypergraph node size,24
+Hide IV components in hypergraph,Y
+
+    State Space Size,  294912
+    Sample Size,   10000
+    H(data), 9.78051
+    H(IV), 9.27748
+    H(DV),0.794541
+    T(IV:DV),0.291503
+    IVs in use (13), A B C D E F G H I J K L M
+    DV,Z
+
+    Model,IV:DJMZ (Directed System)
+    IV Component:,incident_id; date; state; n_males; n_females; n_guns_involved; Guns_Unknown; Guns_Stolen; Guns_Not-Stolen; Adults; Teens; Children; n_injured,ABCDEFGHIJKLM
+    Model Component: ,n_males; Adults; n_injured; n_killed,DJMZ
+    Degrees of Freedom (DF):,147479
+    Loops:,NO
+    Entropy(H):,9.94538
+    Information captured (%):,43.4438
+    Transmission (T):,0.164863
+
+-------------------------------------------------------------------------
+
+    REFERENCE = TOP
+    ,Value,Prob. (Alpha)
+    Log-Likelihood (LR),2285.49,1
+    Pearson X2,2298.24,1
+    Delta DF (dDF),147432,
+
+-------------------------------------------------------------------------
+
+    REFERENCE = BOTTOM
+    ,Value,Prob. (Alpha)
+    Log-Likelihood (LR),1755.6,0
+    Pearson X2,2298.24,0
+    Delta DF (dDF),23,
+
+-------------------------------------------------------------------------
+Conditional DV (D) (%) for each IV composite state for the Model IV:DJMZ.
+IV order: DJM (n_males; Adults; n_injured).
+IV,,,|,Data,,,|,Model,,,,
+,,,|,,obs. p(DV|IV),,|,calc. q(DV|IV),,,,
+D,J,M,|,freq,Z=1,Z=2,|,Z=1,Z=2,rule,#correct,%correct,p(rule),p(margin)
+1,1,1,|,1020.000,98.137,1.863,|,98.137,1.863, 1,1001.000,98.137,0.000,0.000
+1,1,2,|,117.000,97.436,2.564,|,97.436,2.564, 1,114.000,97.436,0.000,0.000
+1,2,1,|,221.000,67.873,32.127,|,67.873,32.127, 1,150.000,67.873,0.000,0.004
+1,2,2,|,196.000,98.980,1.020,|,98.980,1.020, 1,194.000,98.980,0.000,0.000
+1,3,1,|,67.000,86.567,13.433,|,86.567,13.433, 1,58.000,86.567,0.000,0.043
+1,3,2,|,46.000,84.783,15.217,|,84.783,15.217, 1,39.000,84.783,0.000,0.165
+1,4,1,|,38.000,94.737,5.263,|,94.737,5.263, 1,36.000,94.737,0.000,0.007
+1,4,2,|,40.000,92.500,7.500,|,92.500,7.500, 1,37.000,92.500,0.000,0.016
+2,1,1,|,238.000,75.210,24.790,|,75.210,24.790, 1,179.000,75.210,0.000,0.767
+2,1,2,|,166.000,97.590,2.410,|,97.590,2.410, 1,162.000,97.590,0.000,0.000
+2,2,1,|,2183.000,62.391,37.609,|,62.391,37.609, 1,1362.000,62.391,0.000,0.000
+2,2,2,|,1088.000,98.989,1.011,|,98.989,1.011, 1,1077.000,98.989,0.000,0.000
+2,3,1,|,661.000,64.297,35.703,|,64.297,35.703, 1,425.000,64.297,0.000,0.000
+2,3,2,|,280.000,83.571,16.429,|,83.571,16.429, 1,234.000,83.571,0.000,0.003
+2,4,1,|,106.000,78.302,21.698,|,78.302,21.698, 1,83.000,78.302,0.000,0.583
+2,4,2,|,86.000,76.744,23.256,|,76.744,23.256, 1,66.000,76.744,0.000,0.877
+3,1,1,|,93.000,77.419,22.581,|,77.419,22.581, 1,72.000,77.419,0.000,0.753
+3,1,2,|,70.000,88.571,11.429,|,88.571,11.429, 1,62.000,88.571,0.000,0.014
+3,2,1,|,171.000,57.895,42.105,|,57.895,42.105, 1,99.000,57.895,0.039,0.000
+3,2,2,|,134.000,85.821,14.179,|,85.821,14.179, 1,115.000,85.821,0.000,0.008
+3,3,1,|,911.000,53.348,46.652,|,53.348,46.652, 1,486.000,53.348,0.043,0.000
+3,3,2,|,628.000,88.057,11.943,|,88.057,11.943, 1,553.000,88.057,0.000,0.000
+3,4,1,|,723.000,71.923,28.077,|,71.923,28.077, 1,520.000,71.923,0.000,0.009
+3,4,2,|,717.000,66.806,33.194,|,66.806,33.194, 1,479.000,66.806,0.000,0.000
+,,,|,10000.000,76.030,23.970,|,76.030,23.970,1,7603.000,76.030,,
+,,,|,freq,Z=1,Z=2,|,Z=1,Z=2,rule,#correct,%correct,p(rule),p(margin)
+
+Rules marked with an asterisk (*) are selected using the independence model.
+Note: no default state selected, so confusion matrices will not be printed.
+
+
+
+
+Run time: 0.440129 seconds
+
+Writing graph to IV_DJMZ.pdf
